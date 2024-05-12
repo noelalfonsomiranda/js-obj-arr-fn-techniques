@@ -551,6 +551,31 @@ function greeting() {
   console.log("Welcome to Programiz.");
 }
 
+- singleton pattern: ensures that a class can only have a single instance throughout the lifetime of an application. By restricting the instantiation of a class to one object, you can ensure that shared resources or data are managed consistently across different parts of your application.
+
+const Singleton = (function () {
+  let instance;
+  function createInstance() {
+    return {
+      message: "I am the only instance!",
+      showMessage: function () {
+        console.log(this.message);
+      },
+    };
+  }
+  return {
+    getInstance: function () {
+      if (!instance) {
+        instance = createInstance();
+      }
+      return instance;
+    },
+  };
+})();
+const singleton1 = Singleton.getInstance();
+const singleton2 = Singleton.getInstance();
+console.log(singleton1 === singleton2); // true
+
 ===========
 
 let p1= new Promise((resolve,reject)=>{
