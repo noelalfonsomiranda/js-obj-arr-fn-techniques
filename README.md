@@ -128,7 +128,7 @@ dog.displayType(); // Output: Dog
 
 ===========
 
-promise, async/await, try/catch
+promise, async/await, try/catch/finally
 
 Promise:
 https://www.programiz.com/javascript/promise
@@ -144,8 +144,8 @@ let promise = new Promise(function(resolve, reject){
 promise.then((a) => a).then((b) => b).catch((e) => e).finally(() => 'executed')
 
 Promise Methods:
-all([iterable])	Waits for all promises to be resolved or any one to be rejected
-allSettled([iterable])	Waits until all promises are either resolved or rejected
+all([iterable])	Waits for all promises to be resolved or any one to be rejected. will reject immediately upon any of the input promises rejecting.
+allSettled([iterable]) will wait for all input promises to complete, regardless of whether or not one rejects
 any([iterable])	Returns the promise value as soon as any one of the promises is fulfilled
 race([iterable])	Wait until any of the promises is resolved or rejected
 reject(reason)	Returns a new Promise object that is rejected for the given reason
@@ -155,7 +155,9 @@ then()	Appends the resolved handler callback
 finally()	Appends a handler to the promise
 
 Callback:
+A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
 JavaScript callback functions can also be used to perform synchronous tasks.
+SYNCHRONOUSLY executing the callback function. Callbacks can also be executed ASYNCHRONOUSLY
 Promises are similar to callback functions in a sense that they both can be used to handle asynchronous tasks.
 
 api(function(result){
@@ -235,7 +237,7 @@ async function asyncFunc() {
 // calling the async function
 asyncFunc(); // Promise resolved
 
-try/catch:
+try/catch/finally:
 https://www.programiz.com/javascript/try-catch-finally
 
 The try, catch and finally blocks are used to handle exceptions (a type of an error)
