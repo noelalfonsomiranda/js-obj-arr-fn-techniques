@@ -575,6 +575,7 @@ const Singleton = (function () {
 const singleton1 = Singleton.getInstance();
 const singleton2 = Singleton.getInstance();
 console.log(singleton1 === singleton2); // true
+In this example, we create an immediately-invoked function expression (IIFE) that serves as our Singleton. Inside the IIFE, we define a private variable instance and a private function createInstance(). The getInstance() method creates a new instance of the object if it doesn't already exist or returns the existing instance.
 
 ===========
 
